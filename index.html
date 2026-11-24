@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4eadb">
+  <meta name="description" content="A cozy daily murder-mystery puzzle book. Solve five puzzles, close the case, and decorate your reading room.">
+  <title>cozymystrybook — a little mystery every day</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="cozymystrybook home"><span class="brand-mark">✦</span><span>cozy<span class="brand-italic">mystry</span>book</span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <button class="nav-link active" data-page="home">The Book</button>
+      <button class="nav-link" data-page="room">My Room</button>
+      <button class="nav-link" data-page="rules">How to play</button>
+    </nav>
+    <div class="top-actions">
+      <div class="countdown-chip"><span class="tiny-moon">☾</span><span><small>Next mystery</small><b id="headerCountdown">--:--:--</b></span></div>
+      <div id="accountArea"><button class="button button-small button-outline" id="signInButton">Sign in</button></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page home-page" id="homePage">
+      <div class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span>✧</span> YOUR DAILY MOMENT OF MYSTERY <span>✧</span></p>
+          <h1>A warm cup of tea.<br><em>A curious little mystery.</em></h1>
+          <p class="hero-text">Five thoughtful puzzles. One little murder mystery. A story waiting at the end — and a cozy room that becomes yours, one solved case at a time.</p>
+          <div class="hero-actions"><button class="button button-primary" id="startJourneyButton">Enter the reading room <span>↗</span></button><button class="button button-quiet" data-page="rules">How it works <span>→</span></button></div>
+          <div class="hero-meta"><span>☕ A fresh case every day</span><span>✦ Five puzzle chapters</span><span>♡ Make a room your own</span></div>
+        </div>
+        <div class="hero-art" aria-label="Illustration of a cozy reading nook">
+          <div class="art-window"><div class="window-sky"><span class="sun">☼</span><span class="cloud cloud-a">☁</span><span class="cloud cloud-b">☁</span><div class="hill hill-one"></div><div class="hill hill-two"></div></div><div class="window-frame"></div><div class="rain-line r1"></div><div class="rain-line r2"></div><div class="rain-line r3"></div></div>
+          <div class="art-shelf"><span>📚</span><span>🕯️</span><span>📚</span><span>🌿</span></div>
+          <div class="art-chair"><div class="chair-back"></div><div class="chair-seat"></div><div class="chair-arm"></div><span>🧶</span></div>
+          <div class="art-table"><span class="art-cup">☕</span><span class="art-book">📖</span></div>
+          <div class="art-plant plant-a">🪴</div><div class="art-plant plant-b">🌷</div>
+          <div class="art-cat">🐈</div>
+          <div class="art-note">stay a little<br><em>and solve a mystery</em></div>
+        </div>
+      </div>
+      <div class="intro-strip"><div><b>01 / DISCOVER</b><span>Open the daily case file</span></div><div><b>02 / DEDUCE</b><span>Connect five clever clues</span></div><div><b>03 / UNWIND</b><span>Read the ending, decorate your nook</span></div></div>
+      <section class="section-block"><div class="section-heading"><div><p class="eyebrow">INSIDE EACH BOOKLET</p><h2>Five little ways to think.</h2></div><p>Each chapter reveals a different piece of the case. Together, they tell the whole story.</p></div>
+        <div class="puzzle-preview-grid">
+          <article class="preview-card"><span class="preview-number">01</span><span class="preview-icon">🔎</span><h3>Word search</h3><p>Find every hidden word and uncover the motive behind the mystery.</p></article>
+          <article class="preview-card"><span class="preview-number">02</span><span class="preview-icon">▦</span><h3>Mini Sudoku</h3><p>Complete a 6×6 grid. The golden square points to the room.</p></article>
+          <article class="preview-card"><span class="preview-number">03</span><span class="preview-icon">✳</span><h3>Number pattern</h3><p>Spot the rule in a curious sequence and discover the time.</p></article>
+          <article class="preview-card"><span class="preview-number">04</span><span class="preview-icon">♟</span><h3>Murdoku</h3><p>Place the guests on the floor plan. Who was in the room?</p></article>
+          <article class="preview-card"><span class="preview-number">05</span><span class="preview-icon">🌿</span><h3>Hidden objects</h3><p>Look closely through a garden scene to find the final evidence.</p></article>
+        </div>
+      </section>
+      <section class="closing-banner"><div><p class="eyebrow">A SMALL DAILY RITUAL</p><h2>Every case has a story.<br><em>Every story has a place to rest.</em></h2><p>Collect little coins for every solved chapter, then turn your reading room into a place you love.</p></div><button class="button button-light" id="startJourneyButton2">Find today's mystery ↗</button></section>
+      <footer class="site-footer"><span>cozymystrybook</span><span>Made for curious minds & quiet evenings.</span><span>☕ ✦ ♡</span></footer>
+    </section>
+
+    <section class="page room-page" id="roomPage" hidden>
+      <div class="page-title-row"><div><p class="eyebrow">YOUR LITTLE CORNER</p><h1>The reading room</h1><p class="muted">A soft place to solve, read and stay awhile.</p></div><div class="room-stats"><span class="coin-pill">🪙 <b id="roomCoins">0</b> coins</span><button class="button button-primary" id="openBookletButton">Open today's booklet ↗</button></div></div>
+      <div class="room-stage" id="roomStage">
+        <div class="stage-window"><div class="window-glow"></div><span>☁</span><span>☼</span><div class="window-hill"></div></div>
+        <div class="stage-shelf"><i>📚</i><i>📔</i><i>🕯️</i><i>🌿</i><i>📚</i></div>
+        <div class="stage-wall-clock">◷</div>
+        <div class="stage-fireplace"><div class="fireplace-top"></div><div class="fireplace-opening"><span>🔥</span></div></div>
+        <div class="stage-sofa"><span>🧶</span></div>
+        <div class="stage-rug"></div><div class="stage-table"><span>☕</span><span>📖</span></div>
+        <div class="stage-plant">🪴</div><div class="stage-cat">🐈</div>
+        <div class="decor-slot slot-window" data-slot="window"></div><div class="decor-slot slot-wall" data-slot="wall"></div><div class="decor-slot slot-shelf" data-slot="shelf"></div><div class="decor-slot slot-table" data-slot="table"></div><div class="decor-slot slot-desk" data-slot="desk"></div><div class="decor-slot slot-chair" data-slot="chair"></div><div class="decor-slot slot-rug" data-slot="rug"></div>
+        <div class="stage-caption"><span>✦</span> your reading room <span>✦</span></div>
+        <div class="room-booklet-callout"><span class="callout-icon">📜</span><div><b id="roomCaseTitle">Today's case is waiting</b><small id="roomCaseSub">Five puzzles · one story</small></div><button class="round-arrow" id="roomCaseOpen">→</button></div>
+      </div>
+      <div class="room-lower-grid">
+        <section class="room-panel shop-panel"><div class="panel-heading"><div><p class="eyebrow">THE LITTLE SHOP</p><h2>Make it yours</h2></div><span class="shop-flower">✿</span></div><p class="muted small-text">Spend your puzzle coins on little things for your room. Choose an item you own, then pick a place for it.</p><div class="shop-items" id="shopItems"><div class="empty-state">Sign in to visit your little shop.</div></div></section>
+        <section class="room-panel collection-panel"><div class="panel-heading"><div><p class="eyebrow">YOUR COLLECTION</p><h2>Collected comforts</h2></div><span class="collection-icon">♡</span></div><p class="muted small-text">Place something you own into the room, or move it to a new spot.</p><div class="collection-items" id="collectionItems"><div class="empty-state">Your collection is waiting for its first treasure.</div></div><div class="placement-hint" id="placementHint">Choose an item, then tap a highlighted room spot.</div></section>
+      </div>
+      <div class="room-story-row" id="storyRow" hidden><div><p class="eyebrow">CASE CLOSED</p><h2 id="lastStoryTitle">A story well solved.</h2><p class="muted">Your completed mystery is ready to revisit.</p></div><button class="button button-outline" id="readStoryButton">Read the story ↗</button></div>
+    </section>
+
+    <section class="page rules-page" id="rulesPage" hidden>
+      <div class="rules-hero"><p class="eyebrow">A NOTE BEFORE YOU BEGIN</p><h1>How to play<br><em>the little mystery book.</em></h1><p>Take your time. Make notes. Enjoy the clues. There is no timer inside a puzzle, only a fresh case waiting each day.</p></div>
+      <div class="rules-list">
+        <article><span>01</span><div><h2>Word search · Find the motive</h2><p>Tap letters in order to make each hidden word. Words may travel in any direction. Find them all to uncover the motive clue.</p></div><b>🔎</b></article>
+        <article><span>02</span><div><h2>Mini Sudoku · Find the room</h2><p>Fill every row, column and 2×3 box with numbers 1 to 6. Use pencil mode for notes. Undo and Reset are there whenever you need them. The golden square gives you the room code: 1–2 Kitchen, 3 Library, 4–5 Conservatory, 6 Cellar.</p></div><b>▦</b></article>
+        <article><span>03</span><div><h2>Number pattern · Find the time</h2><p>Look at the gaps between the numbers. Work out the rule, enter the next number, and reveal when the incident happened.</p></div><b>✳</b></article>
+        <article><span>04</span><div><h2>Murdoku · Find the killer</h2><p>Place five people on a five-by-five floor plan. Each person appears once, and each row and column holds one person. Use pencil notes to track possibilities. Placed people cross out the rest of their row and column. Undo and Reset are available.</p></div><b>♟</b></article>
+        <article><span>05</span><div><h2>Hidden objects · Find the weapon</h2><p>Search the garden for three tiny objects. When you find them all, a final piece of evidence appears. Tap it to reveal the weapon clue.</p></div><b>🌿</b></article>
+        <article><span>06</span><div><h2>Make your accusation · Read the story</h2><p>Use the clue board to choose the killer, motive, location and weapon. A correct accusation closes the case and unlocks the complete short story.</p></div><b>📜</b></article>
+      </div>
+      <div class="rules-footer"><p>Five puzzles. One case. A little bit of everyday wonder.</p><button class="button button-primary" id="rulesStartButton">Let's solve today's case ↗</button></div>
+    </section>
+  </main>
+
+  <div class="booklet-overlay" id="bookletOverlay" hidden>
+    <div class="booklet-shell">
+      <div class="booklet-top"><div><p class="eyebrow" id="bookletDate">TODAY'S LITTLE CASE</p><h2 id="bookletTitle">The mystery book</h2><p class="muted small-text" id="bookletOpening"></p></div><button class="close-button" id="closeBookletButton" aria-label="Close booklet">×</button></div>
+      <div class="clue-board" id="clueBoard"></div>
+      <nav class="puzzle-tabs" id="puzzleTabs"></nav>
+      <div class="puzzle-body" id="puzzleBody"></div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="authModal" hidden>
+    <div class="auth-card"><button class="close-button auth-close" id="authClose" aria-label="Close">×</button><p class="eyebrow">A PLACE TO CALL YOURS</p><h2 id="authHeading">Welcome back.</h2><p class="muted" id="authSub">Sign in to save your clues, coins and room.</p>
+      <div class="auth-switch"><button class="active" data-auth-mode="login">Sign in</button><button data-auth-mode="register">Create account</button></div>
+      <form id="authForm"><label>Username<input id="authUsername" name="username" autocomplete="username" required minlength="3" maxlength="20"></label><label>Password<input id="authPassword" name="password" type="password" autocomplete="current-password" required minlength="8"></label><button class="button button-primary full-width" type="submit" id="authSubmit">Enter the room ↗</button><p class="form-message" id="authMessage"></p></form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
